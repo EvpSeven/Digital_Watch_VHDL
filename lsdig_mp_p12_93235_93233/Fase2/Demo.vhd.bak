@@ -1,0 +1,82 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.all;
+use IEEE.NUMERIC_STD.all;
+
+entity Demo is
+		
+		port(clk: in std_logic;
+			  reset: in std_logic;
+			  start: in std_logic;
+			  stop: in std_logic;
+			  enable: in std_logic;
+			  dataOut0: out std_logic_vector(3 downto 0);
+			  dataOut1: out std_logic_vector(3 downto 0);
+			  dataOut2: out std_logic_vector(3 downto 0);
+			  dataOut3: out std_logic_vector(2 downto 0)
+			  );
+
+end Demo;
+architecture shell of Demo is
+
+signal s_clock : std_logic;
+
+signal s_reset : std_logic;
+
+begin
+	clock_50:entity work.DeCounter4Bits(RTL)
+			generic map(k			=>12500000 )
+			port map(clkIn	=> clk,
+						clkOut => s_clock);
+	
+	
+	d0 : entity work.DeCounter4Bits(RTL)
+			generic map(MAX	=> 9)
+			port map(  
+						reset	=>	reset,
+					   clk =>	s_clock,		
+						start	=>
+						enable =>	
+						valOut =>		
+						RCO => 	
+						stopCount =>
+						);
+	
+	d1 : entity work.DeCounter4Bits(RTL)
+			generic map(MAX	=> 9)
+			port map(  
+						reset	=>	s_reset
+					   clk =>	s_clock		
+						start	=>
+						enable =>	
+						valOut =>		
+						RCO =>	
+						stopCount =>
+						);
+	
+	d2 : entity work.DeCounter4Bits(RTL)
+			generic map(MAX	=> 9)
+			port map(  
+						reset	=>	
+					   clk =>	s_clock		
+						start	=>
+						enable =>	
+						valOut =>		
+						RCO =>	
+						stopCount =>
+						);
+	
+	d3 : entity work.DeCounter4Bits(RTL)
+			generic map(MAX	=> 5)
+			port map(  
+						reset	=>	
+					   clk =>	s_clock		
+						start	=>
+						enable =>	
+						valOut =>		
+						RCO =>	
+						stopCount =>
+						);
+						
+end shell;
+
+	

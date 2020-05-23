@@ -1,0 +1,576 @@
+Analysis & Synthesis report for Demo_Final
+Thu Apr 11 11:51:45 2019
+Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Registers Removed During Synthesis
+  9. Removed Registers Triggering Further Register Optimizations
+ 10. General Register Statistics
+ 11. Parameter Settings for User Entity Instance: DeCounter4Bits:d0
+ 12. Parameter Settings for User Entity Instance: DeCounter4Bits:d1
+ 13. Parameter Settings for User Entity Instance: DeCounter4Bits:d2
+ 14. Parameter Settings for User Entity Instance: DeCounter4Bits:d3
+ 15. Port Connectivity Checks: "Bin7SegDecoder:m_tens_decod"
+ 16. Port Connectivity Checks: "Bin7SegDecoder:m_units_decod"
+ 17. Port Connectivity Checks: "Bin7SegDecoder:s_tens_decod"
+ 18. Port Connectivity Checks: "Bin7SegDecoder:s_units_decod"
+ 19. Port Connectivity Checks: "DeCounter4Bits:d3"
+ 20. Port Connectivity Checks: "Hex_Block:lx"
+ 21. Post-Synthesis Netlist Statistics for Top Partition
+ 22. Elapsed Time Per Partition
+ 23. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2017  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Thu Apr 11 11:51:45 2019       ;
+; Quartus Prime Version              ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
+; Revision Name                      ; Demo_Final                                  ;
+; Top-level Entity Name              ; Demo_Final                                  ;
+; Family                             ; Cyclone IV E                                ;
+; Total logic elements               ; 0                                           ;
+;     Total combinational functions  ; 0                                           ;
+;     Dedicated logic registers      ; 0                                           ;
+; Total registers                    ; 0                                           ;
+; Total pins                         ; 78                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP4CE115F29C7      ;                    ;
+; Top-level entity name                                                      ; Demo_Final         ; Demo_Final         ;
+; Family name                                                                ; Cyclone IV E       ; Cyclone V          ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                              ; Enable             ; Enable             ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                                        ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 6           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                         ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                  ; Library ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------+---------+
+; DeCounter4Bits.vhd               ; yes             ; User VHDL File  ; D:/LSD/mini-projeto/Parte2/DeCounter4Bits.vhd ;         ;
+; Bin7SegDecoder.vhd               ; yes             ; User VHDL File  ; D:/LSD/mini-projeto/Parte2/Bin7SegDecoder.vhd ;         ;
+; Demo_Final.vhd                   ; yes             ; User VHDL File  ; D:/LSD/mini-projeto/Parte2/Demo_Final.vhd     ;         ;
+; en_gen.vhd                       ; yes             ; User VHDL File  ; D:/LSD/mini-projeto/Parte2/en_gen.vhd         ;         ;
+; control.vhd                      ; yes             ; User VHDL File  ; D:/LSD/mini-projeto/Parte2/control.vhd        ;         ;
+; Hex_Block.vhd                    ; yes             ; User VHDL File  ; D:/LSD/mini-projeto/Parte2/Hex_Block.vhd      ;         ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------+---------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+;                                             ;       ;
+; Total combinational functions               ; 0     ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 0     ;
+;     -- 3 input functions                    ; 0     ;
+;     -- <=2 input functions                  ; 0     ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 0     ;
+;     -- arithmetic mode                      ; 0     ;
+;                                             ;       ;
+; Total registers                             ; 0     ;
+;     -- Dedicated logic registers            ; 0     ;
+;     -- I/O registers                        ; 0     ;
+;                                             ;       ;
+; I/O pins                                    ; 78    ;
+;                                             ;       ;
+; Embedded Multiplier 9-bit elements          ; 0     ;
+;                                             ;       ;
+; Maximum fan-out node                        ; SW[0] ;
+; Maximum fan-out                             ; 1     ;
+; Total fan-out                               ; 78    ;
+; Average fan-out                             ; 0.50  ;
++---------------------------------------------+-------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                      ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
+; |Demo_Final                ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 78   ; 0            ; |Demo_Final         ; Demo_Final  ; work         ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++----------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                               ;
++-----------------------------------------+----------------------------------------+
+; Register name                           ; Reason for Removal                     ;
++-----------------------------------------+----------------------------------------+
+; en_gen:clk|en                           ; Lost fanout                            ;
+; DeCounter4Bits:d3|s_count[4..30]        ; Lost fanout                            ;
+; control:c|s_startout                    ; Lost fanout                            ;
+; DeCounter4Bits:d0|s_count[4..30]        ; Lost fanout                            ;
+; DeCounter4Bits:d1|s_count[4..30]        ; Lost fanout                            ;
+; DeCounter4Bits:d2|s_count[4..30]        ; Lost fanout                            ;
+; en_gen:clk|s_counter[0..30]             ; Lost fanout                            ;
+; DeCounter4Bits:d3|s_count[3]            ; Stuck at GND due to stuck port data_in ;
+; DeCounter4Bits:d3|s_count[2]            ; Stuck at VCC due to stuck port data_in ;
+; DeCounter4Bits:d3|s_count[1]            ; Stuck at GND due to stuck port data_in ;
+; DeCounter4Bits:d3|s_count[0]            ; Stuck at VCC due to stuck port data_in ;
+; DeCounter4Bits:d0|s_count[0]            ; Stuck at VCC due to stuck port data_in ;
+; DeCounter4Bits:d0|s_count[1,2]          ; Stuck at GND due to stuck port data_in ;
+; DeCounter4Bits:d0|s_count[3]            ; Stuck at VCC due to stuck port data_in ;
+; DeCounter4Bits:d1|s_count[0]            ; Stuck at VCC due to stuck port data_in ;
+; DeCounter4Bits:d1|s_count[1,2]          ; Stuck at GND due to stuck port data_in ;
+; DeCounter4Bits:d1|s_count[3]            ; Stuck at VCC due to stuck port data_in ;
+; DeCounter4Bits:d2|s_count[0]            ; Stuck at VCC due to stuck port data_in ;
+; DeCounter4Bits:d2|s_count[1,2]          ; Stuck at GND due to stuck port data_in ;
+; DeCounter4Bits:d2|s_count[3]            ; Stuck at VCC due to stuck port data_in ;
+; Hex_Block:lx|dataOut0[3]                ; Stuck at VCC due to stuck port data_in ;
+; Hex_Block:lx|dataOut0[1,2]              ; Stuck at GND due to stuck port data_in ;
+; Hex_Block:lx|dataOut0[0]                ; Stuck at VCC due to stuck port data_in ;
+; Hex_Block:lx|dataOut1[3]                ; Stuck at VCC due to stuck port data_in ;
+; Hex_Block:lx|dataOut1[1,2]              ; Stuck at GND due to stuck port data_in ;
+; Hex_Block:lx|dataOut1[0]                ; Stuck at VCC due to stuck port data_in ;
+; Hex_Block:lx|dataOut2[3]                ; Stuck at VCC due to stuck port data_in ;
+; Hex_Block:lx|dataOut2[1,2]              ; Stuck at GND due to stuck port data_in ;
+; Hex_Block:lx|dataOut2[0]                ; Stuck at VCC due to stuck port data_in ;
+; Total Number of Removed Registers = 169 ;                                        ;
++-----------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                              ;
++------------------------------+---------------------------+-------------------------------------------------------------------------------+
+; Register name                ; Reason for Removal        ; Registers Removed due to This Register                                        ;
++------------------------------+---------------------------+-------------------------------------------------------------------------------+
+; en_gen:clk|en                ; Lost Fanouts              ; en_gen:clk|s_counter[9], en_gen:clk|s_counter[8], en_gen:clk|s_counter[7],    ;
+;                              ;                           ; en_gen:clk|s_counter[6], en_gen:clk|s_counter[5], en_gen:clk|s_counter[4],    ;
+;                              ;                           ; en_gen:clk|s_counter[3], en_gen:clk|s_counter[2], en_gen:clk|s_counter[1],    ;
+;                              ;                           ; en_gen:clk|s_counter[0], en_gen:clk|s_counter[10], en_gen:clk|s_counter[11],  ;
+;                              ;                           ; en_gen:clk|s_counter[12], en_gen:clk|s_counter[13], en_gen:clk|s_counter[14], ;
+;                              ;                           ; en_gen:clk|s_counter[15], en_gen:clk|s_counter[16], en_gen:clk|s_counter[17], ;
+;                              ;                           ; en_gen:clk|s_counter[18], en_gen:clk|s_counter[19], en_gen:clk|s_counter[20], ;
+;                              ;                           ; en_gen:clk|s_counter[21], en_gen:clk|s_counter[22], en_gen:clk|s_counter[23], ;
+;                              ;                           ; en_gen:clk|s_counter[24], en_gen:clk|s_counter[25], en_gen:clk|s_counter[26], ;
+;                              ;                           ; en_gen:clk|s_counter[27], en_gen:clk|s_counter[28], en_gen:clk|s_counter[29], ;
+;                              ;                           ; en_gen:clk|s_counter[30]                                                      ;
+; DeCounter4Bits:d0|s_count[0] ; Stuck at VCC              ; Hex_Block:lx|dataOut0[0]                                                      ;
+;                              ; due to stuck port data_in ;                                                                               ;
+; DeCounter4Bits:d0|s_count[1] ; Stuck at GND              ; Hex_Block:lx|dataOut0[1]                                                      ;
+;                              ; due to stuck port data_in ;                                                                               ;
+; DeCounter4Bits:d0|s_count[2] ; Stuck at GND              ; Hex_Block:lx|dataOut0[2]                                                      ;
+;                              ; due to stuck port data_in ;                                                                               ;
+; DeCounter4Bits:d0|s_count[3] ; Stuck at VCC              ; Hex_Block:lx|dataOut0[3]                                                      ;
+;                              ; due to stuck port data_in ;                                                                               ;
+; DeCounter4Bits:d1|s_count[0] ; Stuck at VCC              ; Hex_Block:lx|dataOut1[0]                                                      ;
+;                              ; due to stuck port data_in ;                                                                               ;
+; DeCounter4Bits:d1|s_count[1] ; Stuck at GND              ; Hex_Block:lx|dataOut1[1]                                                      ;
+;                              ; due to stuck port data_in ;                                                                               ;
+; DeCounter4Bits:d1|s_count[2] ; Stuck at GND              ; Hex_Block:lx|dataOut1[2]                                                      ;
+;                              ; due to stuck port data_in ;                                                                               ;
+; DeCounter4Bits:d1|s_count[3] ; Stuck at VCC              ; Hex_Block:lx|dataOut1[3]                                                      ;
+;                              ; due to stuck port data_in ;                                                                               ;
+; DeCounter4Bits:d2|s_count[0] ; Stuck at VCC              ; Hex_Block:lx|dataOut2[0]                                                      ;
+;                              ; due to stuck port data_in ;                                                                               ;
+; DeCounter4Bits:d2|s_count[1] ; Stuck at GND              ; Hex_Block:lx|dataOut2[1]                                                      ;
+;                              ; due to stuck port data_in ;                                                                               ;
+; DeCounter4Bits:d2|s_count[2] ; Stuck at GND              ; Hex_Block:lx|dataOut2[2]                                                      ;
+;                              ; due to stuck port data_in ;                                                                               ;
+; DeCounter4Bits:d2|s_count[3] ; Stuck at VCC              ; Hex_Block:lx|dataOut2[3]                                                      ;
+;                              ; due to stuck port data_in ;                                                                               ;
++------------------------------+---------------------------+-------------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: DeCounter4Bits:d0 ;
++----------------+-------+---------------------------------------+
+; Parameter Name ; Value ; Type                                  ;
++----------------+-------+---------------------------------------+
+; max            ; 9     ; Signed Integer                        ;
++----------------+-------+---------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: DeCounter4Bits:d1 ;
++----------------+-------+---------------------------------------+
+; Parameter Name ; Value ; Type                                  ;
++----------------+-------+---------------------------------------+
+; max            ; 9     ; Signed Integer                        ;
++----------------+-------+---------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: DeCounter4Bits:d2 ;
++----------------+-------+---------------------------------------+
+; Parameter Name ; Value ; Type                                  ;
++----------------+-------+---------------------------------------+
+; max            ; 9     ; Signed Integer                        ;
++----------------+-------+---------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: DeCounter4Bits:d3 ;
++----------------+-------+---------------------------------------+
+; Parameter Name ; Value ; Type                                  ;
++----------------+-------+---------------------------------------+
+; max            ; 5     ; Signed Integer                        ;
++----------------+-------+---------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------+
+; Port Connectivity Checks: "Bin7SegDecoder:m_tens_decod" ;
++--------+-------+----------+-----------------------------+
+; Port   ; Type  ; Severity ; Details                     ;
++--------+-------+----------+-----------------------------+
+; enable ; Input ; Info     ; Stuck at VCC                ;
++--------+-------+----------+-----------------------------+
+
+
++----------------------------------------------------------+
+; Port Connectivity Checks: "Bin7SegDecoder:m_units_decod" ;
++--------+-------+----------+------------------------------+
+; Port   ; Type  ; Severity ; Details                      ;
++--------+-------+----------+------------------------------+
+; enable ; Input ; Info     ; Stuck at VCC                 ;
++--------+-------+----------+------------------------------+
+
+
++---------------------------------------------------------+
+; Port Connectivity Checks: "Bin7SegDecoder:s_tens_decod" ;
++--------+-------+----------+-----------------------------+
+; Port   ; Type  ; Severity ; Details                     ;
++--------+-------+----------+-----------------------------+
+; enable ; Input ; Info     ; Stuck at VCC                ;
++--------+-------+----------+-----------------------------+
+
+
++----------------------------------------------------------+
+; Port Connectivity Checks: "Bin7SegDecoder:s_units_decod" ;
++--------+-------+----------+------------------------------+
+; Port   ; Type  ; Severity ; Details                      ;
++--------+-------+----------+------------------------------+
+; enable ; Input ; Info     ; Stuck at VCC                 ;
++--------+-------+----------+------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "DeCounter4Bits:d3"                                                                  ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; rco  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Hex_Block:lx"                                                                           ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; dataout3 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 78                          ;
+; cycloneiii_lcell_comb ; 2                           ;
+;     normal            ; 2                           ;
+;         0 data inputs ; 2                           ;
+;                       ;                             ;
+; Max LUT depth         ; 0.00                        ;
+; Average LUT depth     ; 0.00                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+    Info: Processing started: Thu Apr 11 11:51:34 2019
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Demo_Final -c Demo_Final
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file decounter4bits.vhd
+    Info (12022): Found design unit 1: DeCounter4Bits-RTL File: D:/LSD/mini-projeto/Parte2/DeCounter4Bits.vhd Line: 19
+    Info (12023): Found entity 1: DeCounter4Bits File: D:/LSD/mini-projeto/Parte2/DeCounter4Bits.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file bin7segdecoder.vhd
+    Info (12022): Found design unit 1: Bin7SegDecoder-Behavioral File: D:/LSD/mini-projeto/Parte2/Bin7SegDecoder.vhd Line: 8
+    Info (12023): Found entity 1: Bin7SegDecoder File: D:/LSD/mini-projeto/Parte2/Bin7SegDecoder.vhd Line: 3
+Info (12021): Found 2 design units, including 1 entities, in source file demo_final.vhd
+    Info (12022): Found design unit 1: Demo_Final-shell File: D:/LSD/mini-projeto/Parte2/Demo_Final.vhd Line: 19
+    Info (12023): Found entity 1: Demo_Final File: D:/LSD/mini-projeto/Parte2/Demo_Final.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file en_gen.vhd
+    Info (12022): Found design unit 1: en_gen-beh File: D:/LSD/mini-projeto/Parte2/en_gen.vhd Line: 15
+    Info (12023): Found entity 1: en_gen File: D:/LSD/mini-projeto/Parte2/en_gen.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file control.vhd
+    Info (12022): Found design unit 1: control-behav File: D:/LSD/mini-projeto/Parte2/control.vhd Line: 19
+    Info (12023): Found entity 1: control File: D:/LSD/mini-projeto/Parte2/control.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file hex_block.vhd
+    Info (12022): Found design unit 1: Hex_Block-Behav File: D:/LSD/mini-projeto/Parte2/Hex_Block.vhd Line: 20
+    Info (12023): Found entity 1: Hex_Block File: D:/LSD/mini-projeto/Parte2/Hex_Block.vhd Line: 7
+Info (12127): Elaborating entity "Demo_Final" for the top level hierarchy
+Warning (10541): VHDL Signal Declaration warning at Demo_Final.vhd(15): used implicit default value for signal "LEDR" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: D:/LSD/mini-projeto/Parte2/Demo_Final.vhd Line: 15
+Warning (10036): Verilog HDL or VHDL warning at Demo_Final.vhd(35): object "s_rco3" assigned a value but never read File: D:/LSD/mini-projeto/Parte2/Demo_Final.vhd Line: 35
+Warning (10036): Verilog HDL or VHDL warning at Demo_Final.vhd(39): object "s_lTensTerm" assigned a value but never read File: D:/LSD/mini-projeto/Parte2/Demo_Final.vhd Line: 39
+Warning (10873): Using initial value X (don't care) for net "LEDG[7..0]" at Demo_Final.vhd(14) File: D:/LSD/mini-projeto/Parte2/Demo_Final.vhd Line: 14
+Info (12129): Elaborating entity "en_gen" using architecture "A:beh" for hierarchy "en_gen:clk" File: D:/LSD/mini-projeto/Parte2/Demo_Final.vhd Line: 68
+Info (12129): Elaborating entity "control" using architecture "A:behav" for hierarchy "control:c" File: D:/LSD/mini-projeto/Parte2/Demo_Final.vhd Line: 74
+Info (12129): Elaborating entity "Hex_Block" using architecture "A:behav" for hierarchy "Hex_Block:lx" File: D:/LSD/mini-projeto/Parte2/Demo_Final.vhd Line: 83
+Info (12129): Elaborating entity "DeCounter4Bits" using architecture "A:rtl" for hierarchy "DeCounter4Bits:d0" File: D:/LSD/mini-projeto/Parte2/Demo_Final.vhd Line: 96
+Info (12129): Elaborating entity "DeCounter4Bits" using architecture "A:rtl" for hierarchy "DeCounter4Bits:d3" File: D:/LSD/mini-projeto/Parte2/Demo_Final.vhd Line: 133
+Info (12129): Elaborating entity "Bin7SegDecoder" using architecture "A:behavioral" for hierarchy "Bin7SegDecoder:s_units_decod" File: D:/LSD/mini-projeto/Parte2/Demo_Final.vhd Line: 157
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "HEX2[0]" is stuck at GND File: D:/LSD/mini-projeto/Parte2/Demo_Final.vhd Line: 10
+    Warning (13410): Pin "HEX2[1]" is stuck at GND File: D:/LSD/mini-projeto/Parte2/Demo_Final.vhd Line: 10
+    Warning (13410): Pin "HEX2[2]" is stuck at GND File: D:/LSD/mini-projeto/Parte2/Demo_Final.vhd Line: 10
+    Warning (13410): Pin "HEX2[3]" is stuck at GND File: D:/LSD/mini-projeto/Parte2/Demo_Final.vhd Line: 10
+    Warning (13410): Pin "HEX2[4]" is stuck at VCC File: D:/LSD/mini-projeto/Parte2/Demo_Final.vhd Line: 10
+    Warning (13410): Pin "HEX2[5]" is stuck at GND File: D:/LSD/mini-projeto/Parte2/Demo_Final.vhd Line: 10
+    Warning (13410): Pin "HEX2[6]" is stuck at GND File: D:/LSD/mini-projeto/Parte2/Demo_Final.vhd Line: 10
+    Warning (13410): Pin "HEX3[0]" is stuck at GND File: D:/LSD/mini-projeto/Parte2/Demo_Final.vhd Line: 11
+    Warning (13410): Pin "HEX3[1]" is stuck at GND File: D:/LSD/mini-projeto/Parte2/Demo_Final.vhd Line: 11
+    Warning (13410): Pin "HEX3[2]" is stuck at GND File: D:/LSD/mini-projeto/Parte2/Demo_Final.vhd Line: 11
+    Warning (13410): Pin "HEX3[3]" is stuck at GND File: D:/LSD/mini-projeto/Parte2/Demo_Final.vhd Line: 11
+    Warning (13410): Pin "HEX3[4]" is stuck at VCC File: D:/LSD/mini-projeto/Parte2/Demo_Final.vhd Line: 11
+    Warning (13410): Pin "HEX3[5]" is stuck at GND File: D:/LSD/mini-projeto/Parte2/Demo_Final.vhd Line: 11
+    Warning (13410): Pin "HEX3[6]" is stuck at GND File: D:/LSD/mini-projeto/Parte2/Demo_Final.vhd Line: 11
+    Warning (13410): Pin "HEX4[0]" is stuck at GND File: D:/LSD/mini-projeto/Parte2/Demo_Final.vhd Line: 12
+    Warning (13410): Pin "HEX4[1]" is stuck at GND File: D:/LSD/mini-projeto/Parte2/Demo_Final.vhd Line: 12
+    Warning (13410): Pin "HEX4[2]" is stuck at GND File: D:/LSD/mini-projeto/Parte2/Demo_Final.vhd Line: 12
+    Warning (13410): Pin "HEX4[3]" is stuck at GND File: D:/LSD/mini-projeto/Parte2/Demo_Final.vhd Line: 12
+    Warning (13410): Pin "HEX4[4]" is stuck at VCC File: D:/LSD/mini-projeto/Parte2/Demo_Final.vhd Line: 12
+    Warning (13410): Pin "HEX4[5]" is stuck at GND File: D:/LSD/mini-projeto/Parte2/Demo_Final.vhd Line: 12
+    Warning (13410): Pin "HEX4[6]" is stuck at GND File: D:/LSD/mini-projeto/Parte2/Demo_Final.vhd Line: 12
+    Warning (13410): Pin "HEX5[0]" is stuck at GND File: D:/LSD/mini-projeto/Parte2/Demo_Final.vhd Line: 13
+    Warning (13410): Pin "HEX5[1]" is stuck at VCC File: D:/LSD/mini-projeto/Parte2/Demo_Final.vhd Line: 13
+    Warning (13410): Pin "HEX5[2]" is stuck at GND File: D:/LSD/mini-projeto/Parte2/Demo_Final.vhd Line: 13
+    Warning (13410): Pin "HEX5[3]" is stuck at GND File: D:/LSD/mini-projeto/Parte2/Demo_Final.vhd Line: 13
+    Warning (13410): Pin "HEX5[4]" is stuck at VCC File: D:/LSD/mini-projeto/Parte2/Demo_Final.vhd Line: 13
+    Warning (13410): Pin "HEX5[5]" is stuck at GND File: D:/LSD/mini-projeto/Parte2/Demo_Final.vhd Line: 13
+    Warning (13410): Pin "HEX5[6]" is stuck at GND File: D:/LSD/mini-projeto/Parte2/Demo_Final.vhd Line: 13
+    Warning (13410): Pin "LEDG[0]" is stuck at GND File: D:/LSD/mini-projeto/Parte2/Demo_Final.vhd Line: 14
+    Warning (13410): Pin "LEDG[1]" is stuck at GND File: D:/LSD/mini-projeto/Parte2/Demo_Final.vhd Line: 14
+    Warning (13410): Pin "LEDG[2]" is stuck at GND File: D:/LSD/mini-projeto/Parte2/Demo_Final.vhd Line: 14
+    Warning (13410): Pin "LEDG[3]" is stuck at GND File: D:/LSD/mini-projeto/Parte2/Demo_Final.vhd Line: 14
+    Warning (13410): Pin "LEDG[4]" is stuck at GND File: D:/LSD/mini-projeto/Parte2/Demo_Final.vhd Line: 14
+    Warning (13410): Pin "LEDG[5]" is stuck at GND File: D:/LSD/mini-projeto/Parte2/Demo_Final.vhd Line: 14
+    Warning (13410): Pin "LEDG[6]" is stuck at GND File: D:/LSD/mini-projeto/Parte2/Demo_Final.vhd Line: 14
+    Warning (13410): Pin "LEDG[7]" is stuck at GND File: D:/LSD/mini-projeto/Parte2/Demo_Final.vhd Line: 14
+    Warning (13410): Pin "LEDG[8]" is stuck at GND File: D:/LSD/mini-projeto/Parte2/Demo_Final.vhd Line: 14
+    Warning (13410): Pin "LEDR[0]" is stuck at GND File: D:/LSD/mini-projeto/Parte2/Demo_Final.vhd Line: 15
+    Warning (13410): Pin "LEDR[1]" is stuck at GND File: D:/LSD/mini-projeto/Parte2/Demo_Final.vhd Line: 15
+    Warning (13410): Pin "LEDR[2]" is stuck at GND File: D:/LSD/mini-projeto/Parte2/Demo_Final.vhd Line: 15
+    Warning (13410): Pin "LEDR[3]" is stuck at GND File: D:/LSD/mini-projeto/Parte2/Demo_Final.vhd Line: 15
+    Warning (13410): Pin "LEDR[4]" is stuck at GND File: D:/LSD/mini-projeto/Parte2/Demo_Final.vhd Line: 15
+    Warning (13410): Pin "LEDR[5]" is stuck at GND File: D:/LSD/mini-projeto/Parte2/Demo_Final.vhd Line: 15
+    Warning (13410): Pin "LEDR[6]" is stuck at GND File: D:/LSD/mini-projeto/Parte2/Demo_Final.vhd Line: 15
+    Warning (13410): Pin "LEDR[7]" is stuck at GND File: D:/LSD/mini-projeto/Parte2/Demo_Final.vhd Line: 15
+    Warning (13410): Pin "LEDR[8]" is stuck at GND File: D:/LSD/mini-projeto/Parte2/Demo_Final.vhd Line: 15
+    Warning (13410): Pin "LEDR[9]" is stuck at GND File: D:/LSD/mini-projeto/Parte2/Demo_Final.vhd Line: 15
+    Warning (13410): Pin "LEDR[10]" is stuck at GND File: D:/LSD/mini-projeto/Parte2/Demo_Final.vhd Line: 15
+    Warning (13410): Pin "LEDR[11]" is stuck at GND File: D:/LSD/mini-projeto/Parte2/Demo_Final.vhd Line: 15
+    Warning (13410): Pin "LEDR[12]" is stuck at GND File: D:/LSD/mini-projeto/Parte2/Demo_Final.vhd Line: 15
+    Warning (13410): Pin "LEDR[13]" is stuck at GND File: D:/LSD/mini-projeto/Parte2/Demo_Final.vhd Line: 15
+    Warning (13410): Pin "LEDR[14]" is stuck at GND File: D:/LSD/mini-projeto/Parte2/Demo_Final.vhd Line: 15
+    Warning (13410): Pin "LEDR[15]" is stuck at GND File: D:/LSD/mini-projeto/Parte2/Demo_Final.vhd Line: 15
+    Warning (13410): Pin "LEDR[16]" is stuck at GND File: D:/LSD/mini-projeto/Parte2/Demo_Final.vhd Line: 15
+    Warning (13410): Pin "LEDR[17]" is stuck at GND File: D:/LSD/mini-projeto/Parte2/Demo_Final.vhd Line: 15
+Info (17049): 141 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 23 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "SW[0]" File: D:/LSD/mini-projeto/Parte2/Demo_Final.vhd Line: 8
+    Warning (15610): No output dependent on input pin "SW[1]" File: D:/LSD/mini-projeto/Parte2/Demo_Final.vhd Line: 8
+    Warning (15610): No output dependent on input pin "SW[2]" File: D:/LSD/mini-projeto/Parte2/Demo_Final.vhd Line: 8
+    Warning (15610): No output dependent on input pin "SW[3]" File: D:/LSD/mini-projeto/Parte2/Demo_Final.vhd Line: 8
+    Warning (15610): No output dependent on input pin "SW[4]" File: D:/LSD/mini-projeto/Parte2/Demo_Final.vhd Line: 8
+    Warning (15610): No output dependent on input pin "SW[5]" File: D:/LSD/mini-projeto/Parte2/Demo_Final.vhd Line: 8
+    Warning (15610): No output dependent on input pin "SW[6]" File: D:/LSD/mini-projeto/Parte2/Demo_Final.vhd Line: 8
+    Warning (15610): No output dependent on input pin "SW[7]" File: D:/LSD/mini-projeto/Parte2/Demo_Final.vhd Line: 8
+    Warning (15610): No output dependent on input pin "SW[8]" File: D:/LSD/mini-projeto/Parte2/Demo_Final.vhd Line: 8
+    Warning (15610): No output dependent on input pin "SW[9]" File: D:/LSD/mini-projeto/Parte2/Demo_Final.vhd Line: 8
+    Warning (15610): No output dependent on input pin "SW[10]" File: D:/LSD/mini-projeto/Parte2/Demo_Final.vhd Line: 8
+    Warning (15610): No output dependent on input pin "SW[11]" File: D:/LSD/mini-projeto/Parte2/Demo_Final.vhd Line: 8
+    Warning (15610): No output dependent on input pin "SW[12]" File: D:/LSD/mini-projeto/Parte2/Demo_Final.vhd Line: 8
+    Warning (15610): No output dependent on input pin "SW[13]" File: D:/LSD/mini-projeto/Parte2/Demo_Final.vhd Line: 8
+    Warning (15610): No output dependent on input pin "SW[14]" File: D:/LSD/mini-projeto/Parte2/Demo_Final.vhd Line: 8
+    Warning (15610): No output dependent on input pin "SW[15]" File: D:/LSD/mini-projeto/Parte2/Demo_Final.vhd Line: 8
+    Warning (15610): No output dependent on input pin "SW[16]" File: D:/LSD/mini-projeto/Parte2/Demo_Final.vhd Line: 8
+    Warning (15610): No output dependent on input pin "SW[17]" File: D:/LSD/mini-projeto/Parte2/Demo_Final.vhd Line: 8
+    Warning (15610): No output dependent on input pin "KEY[0]" File: D:/LSD/mini-projeto/Parte2/Demo_Final.vhd Line: 9
+    Warning (15610): No output dependent on input pin "KEY[1]" File: D:/LSD/mini-projeto/Parte2/Demo_Final.vhd Line: 9
+    Warning (15610): No output dependent on input pin "KEY[2]" File: D:/LSD/mini-projeto/Parte2/Demo_Final.vhd Line: 9
+    Warning (15610): No output dependent on input pin "CLOCK_50" File: D:/LSD/mini-projeto/Parte2/Demo_Final.vhd Line: 7
+    Warning (15610): No output dependent on input pin "KEY[3]" File: D:/LSD/mini-projeto/Parte2/Demo_Final.vhd Line: 9
+Info (21057): Implemented 78 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 23 input pins
+    Info (21059): Implemented 55 output pins
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 85 warnings
+    Info: Peak virtual memory: 4815 megabytes
+    Info: Processing ended: Thu Apr 11 11:51:45 2019
+    Info: Elapsed time: 00:00:11
+    Info: Total CPU time (on all processors): 00:00:18
+
+

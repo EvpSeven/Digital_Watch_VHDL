@@ -1,0 +1,27 @@
+--Control unity
+
+library IEEE;
+use IEEE.STD_LOGIC_1164.all;
+use IEEE.NUMERIC_STD.all;
+
+entity control is
+	map(start : in std_logic;
+		 clk : in std_logic;
+		 start_out : out std_logic);
+
+
+end control;
+
+architecture behav of control is
+
+begin
+	process(clk)
+	begin
+		if(rising_edge(clk)) then
+			if ( start = '1') then
+				start_out <= '1';
+			else
+				start_out <= '0';
+			end if;
+		end if;
+end behav;
